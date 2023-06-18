@@ -17,7 +17,6 @@ import AdbIcon from '@mui/icons-material/Adb';
 const pages = [
     { menutext: 'Master', menupath: 'master' },
     { menutext: 'Employee', menupath: 'employee' },
-    { menutext: 'Master', menupath: 'master' },
     { menutext: 'Reports', menupath: 'reports' }
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -94,8 +93,8 @@ export default function Header() {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page.menupath}
+                            {pages.map((page, index) => (
+                                <MenuItem key={index}
                                     onClick={handleCloseNavMenu}
                                 >
                                     <Typography textAlign="center">
@@ -125,13 +124,13 @@ export default function Header() {
                         G-HRMS
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                        {pages.map((page, index) => (
                             <Button
-                                key={page}
+                                key={index}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                {page.menutext}
                             </Button>
                         ))}
                     </Box>
