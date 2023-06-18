@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { NavLink } from 'react-router-dom';
 
 
 const pages = [
@@ -94,7 +95,7 @@ export default function Header() {
                             }}
                         >
                             {pages.map((page, index) => (
-                                <MenuItem key={index}
+                                <MenuItem to={page.menupath} key={index}
                                     onClick={handleCloseNavMenu}
                                 >
                                     <Typography textAlign="center">
@@ -125,13 +126,16 @@ export default function Header() {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page, index) => (
-                            <Button
-                                key={index}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                            <NavLink key={index} to={page.menupath} style={{ textDecoration: 'none' }}
+                                className={({ isActive }) => isActive ? 'active' : ''}
                             >
-                                {page.menutext}
-                            </Button>
+                                <Button
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {page.menutext}
+                                </Button>
+                            </NavLink>
                         ))}
                     </Box>
 

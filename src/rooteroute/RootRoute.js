@@ -11,9 +11,6 @@ export default function RootRoute() {
             </Grid>
             <Grid item xs={12}>
                 <Outlet />
-                <h1>
-                    heeeelkkljkljkljkljlkjljljljljlkjkljkljlkjlkjlkjlkjljlkjljjljljljljlkj
-                </h1>
             </Grid>
         </Grid>
     )
