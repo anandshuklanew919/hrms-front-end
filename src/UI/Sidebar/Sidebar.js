@@ -25,28 +25,30 @@ export default function Sidebar(props) {
             }}
 
         >
-            <List sx={{ marginTop: 9 }}>
+            <List sx={{ marginTop: 8 }}>
                 {props.sidemenus.map((menu, index) => {
 
                     return (
                         <ListItem key={index} disablePadding>
-                            <NavLink to={menu.path}
-                                style={{ textDecoration: 'none' }}
-                                className={({ isActive }) => isActive ? 'active' : ''}
-                            >
-                                <Grid
-                                    justifyContent='center'
-                                    sx={{ textAlign: 'center', marginBottom: 1 }}
+                            <ListItemButton>
+                                <NavLink to={menu.menupath}
+                                    style={{ textDecoration: 'none' }}
+                                    className={({ isActive }) => isActive ? 'active' : ''}
                                 >
-                                    <ListItemButton>
+                                    <Grid
+                                        justifyContent='center'
+                                        sx={{ textAlign: 'center', marginBottom: 1 }}
+                                    >
+
                                         <ListItemIcon sx={{ display: 'block' }}>
                                             <Icon icon={menu.icon} />
                                         </ListItemIcon>
                                         <ListItemText primary={menu.menutext} />
                                         <Divider />
-                                    </ListItemButton>
-                                </Grid>
-                            </NavLink>
+
+                                    </Grid>
+                                </NavLink>
+                            </ListItemButton>
                         </ListItem>
                     )
 
