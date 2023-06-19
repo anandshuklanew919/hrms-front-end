@@ -43,8 +43,12 @@ export default function Header() {
     };
 
     return (
-        <AppBar position="fixed"
-            sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        <AppBar
+            position="fixed"
+            sx={{
+                zIndex: (theme) => theme.zIndex.drawer + 1, top: 0,
+
+            }}
         >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
@@ -128,16 +132,15 @@ export default function Header() {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page, index) => (
-                            <NavLink key={index} to={page.menupath} style={{ textDecoration: 'none' }}
-                                className={({ isActive }) => isActive ? 'active' : ''}
+                            <Button
+                                key={index}
+                                component={NavLink}
+                                to={page.menupath}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                <Button
-                                    onClick={handleCloseNavMenu}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
-                                >
-                                    {page.menutext}
-                                </Button>
-                            </NavLink>
+                                {page.menutext}
+                            </Button>
                         ))}
                     </Box>
 

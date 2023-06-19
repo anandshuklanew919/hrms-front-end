@@ -1,7 +1,8 @@
-import { Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import React from 'react'
 import Header from '../UI/Header/Header'
 import { Outlet } from 'react-router-dom'
+
 
 export default function RootRoute() {
     return (

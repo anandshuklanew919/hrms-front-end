@@ -5,6 +5,7 @@ import Sidebar from '../../UI/Sidebar/Sidebar'
 
 
 const EMPSIDEMENU = [
+    { menupath: '.', menutext: 'Master Dashboard', icon: 'DashboardIcon' },
     { menupath: 'company', menutext: 'Company', icon: 'BusinessIcon' },
     { menupath: 'businessunit', menutext: 'Business Unit', icon: 'DomainAddIcon' },
     { menupath: 'department', menutext: 'Department', icon: 'GroupIcon' },
@@ -15,9 +16,9 @@ export default function MasterRoot() {
     return (
         <>
             <Sidebar sidemenus={EMPSIDEMENU} />
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{ position: 'absolute', top: '75px', left: '125px' }}>
                 <Outlet />
-            </Grid>
+            </Grid >
         </>
     )
 }

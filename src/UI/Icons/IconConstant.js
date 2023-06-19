@@ -6,6 +6,7 @@ export const ICONS = {
     BUSINESSICON: 'BusinessIcon',
     GROUPICON: 'GroupIcon',
     DOMAINADDICON: 'DomainAddIcon',
-    CLASSICON: 'ClassIcon'
+    CLASSICON: 'ClassIcon',
+    DASHBOARDICON: 'DashboardIcon'
 
 }

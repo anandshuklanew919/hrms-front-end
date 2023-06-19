@@ -6,6 +6,7 @@ import BusinessIcon from '@mui/icons-material/Business';
 import GroupIcon from '@mui/icons-material/Group';
 import DomainAddIcon from '@mui/icons-material/DomainAdd';
 import ClassIcon from '@mui/icons-material/Class';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import { ICONS } from './IconConstant'
 
 
@@ -33,6 +34,9 @@ export default function Icon(props) {
         }
         else if (icon === ICONS.DOMAINADDICON) {
             return <DomainAddIcon />
+        }
+        else if (icon === ICONS.DASHBOARDICON) {
+            return <DashboardIcon />
         }
     }
 

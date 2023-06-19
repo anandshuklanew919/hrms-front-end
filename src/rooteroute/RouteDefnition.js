@@ -23,6 +23,7 @@ const routeDefnition = createBrowserRouter([
                 children: [
                     {
                         path: '',
+                        index: true,
                         element: <MasterDashboard />
                     },
                     {
