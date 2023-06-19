@@ -1,4 +1,4 @@
-import { Box, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import React from 'react'
 import Header from '../UI/Header/Header'
 import { Outlet } from 'react-router-dom'

@@ -41,7 +41,6 @@ export default function Sidebar(props) {
                 overflow: 'hidden',
                 display: 'flex',
                 [`& .MuiDrawer-paper`]: { width: 120, boxSizing: 'border-box', top: '64px' },
-                backgroundColor: 'primary.main',
 
             }}
         >

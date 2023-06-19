@@ -15,7 +15,7 @@ function App() {
       primary: {
         main: '#1976d2',
       },
-      mode: 'light'
+      mode: 'dark'
     },
   });
 
