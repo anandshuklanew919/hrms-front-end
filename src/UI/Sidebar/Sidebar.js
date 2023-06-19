@@ -16,7 +16,9 @@ const MyNavLink = React.forwardRef((props, ref) => (
 
     <NavLink
         ref={ref}
+        end
         to={props.to}
+        isActive={({ isActive }) => isActive ? true : false}
         className={({ isActive }) => `${props.className} ${isActive ? props.active : ''}`}
     >
         {props.children}
@@ -47,33 +49,39 @@ export default function Sidebar(props) {
                 {props.sidemenus.map((menu, index) => {
 
                     return (
-                        <ListItem
-                            key={index}
-                            disablePadding
-                        >
-                            <ListItemButton
-                                to={menu.menupath}
-                                LinkComponent={MyNavLink}
-                                active={classes.active}
-                                sx={{
-                                    marginLeft: menu.menutext.length < 9 ? '10px' : ''
-                                }}
+                        <>
+                            <ListItem
+                                key={index}
+                                disablePadding
                             >
-                                <Grid
-                                    justifyContent='center'
-                                    sx={{ marginBottom: 1, textAlign: 'center' }}
+                                <ListItemButton
+                                    to={menu.menupath}
+                                    LinkComponent={MyNavLink}
+                                    active={classes.active}
+                                    sx={{
+                                        paddingLeft: menu.menutext.length < 9 ? '25px' : '',
+                                        '&.active': {
+                                            color: 'blue',
+                                            fontWeight: 600
+                                        }
+                                    }}
                                 >
+                                    <Grid
+                                        justifyContent='center'
+                                        sx={{ marginBottom: 1, textAlign: 'center' }}
+                                    >
 
-                                    <ListItemIcon sx={{ display: 'block' }}>
-                                        <Icon icon={menu.icon} />
-                                    </ListItemIcon>
-                                    <Typography>
-                                        {menu.menutext}
-                                    </Typography>
-                                    <Divider />
-                                </Grid>
-                            </ListItemButton>
-                        </ListItem>
+                                        <ListItemIcon sx={{ display: 'block' }}>
+                                            <Icon icon={menu.icon} />
+                                        </ListItemIcon>
+                                        <Typography>
+                                            {menu.menutext}
+                                        </Typography>
+                                    </Grid>
+                                </ListItemButton>
+                            </ListItem>
+                            <Divider />
+                        </>
                     )
 
                 })
