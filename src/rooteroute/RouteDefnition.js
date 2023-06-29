@@ -9,13 +9,16 @@ import SectionSummaryWrap from '../component/Masters/Section/SectionSummary/Sect
 import EmployeeRoot from '../component/Employee/Index'
 import EmployeeDashboard from '../component/Employee/EmployeeDashboard/EmployeeDashboard'
 import EmployeeSummaryWrap from '../component/Employee/EmployeeSummary/EmployeeSummaryWrap'
+import PrivateRoute from "./PrivateRoute";
+import LoginPage from "../component/Auth/Login/Login";
 
 
 
 const routeDefnition = createBrowserRouter([
+    { path: '/login', element: <LoginPage /> },
     {
         path: '/',
-        element: <RootRoute />,
+        element: <PrivateRoute> <RootRoute /> </PrivateRoute>,
         children: [
             {
                 path: 'master',

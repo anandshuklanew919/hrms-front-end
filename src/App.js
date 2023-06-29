@@ -1,11 +1,9 @@
-import React from "react";
 import { RouterProvider } from "react-router-dom";
 import routeDefnition from './rooteroute/RouteDefnition'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
-
-
+import authContext from "./HRMSContext/AuthContext";
+import { useState } from "react";
 
 
 function App() {
@@ -15,16 +13,20 @@ function App() {
       primary: {
         main: '#1976d2',
       },
-      mode: 'dark'
+      mode: 'light'
     },
   });
 
+  const [authenticated, setAuthenticated] = useState(false)
+
   return (
-    <ThemeProvider theme={customTheme}>
-      <CssBaseline />
-      <RouterProvider router={routeDefnition} />
-    </ThemeProvider >
-  );
+    <authContext.Provider value={{ authenticated, setAuthenticated }}>
+      <ThemeProvider theme={customTheme}>
+        <CssBaseline />
+        <RouterProvider router={routeDefnition} />
+      </ThemeProvider >
+    </authContext.Provider>
+  )
 }
 
 export default App;
