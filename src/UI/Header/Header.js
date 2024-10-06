@@ -145,7 +145,19 @@ export default function Header() {
                                 component={NavLink}
                                 to={page.menupath}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{
+                                    my: 2,
+                                    color: 'white', // Keep color white
+                                    display: 'block',
+                                    '&:hover': {
+                                        backgroundColor: 'transparent', // Prevent background color change
+                                        color: 'white', // Keep text color white
+                                    },
+                                    '&.active': {
+                                        color: 'blue',
+                                        fontWeight: 600,
+                                    },
+                                }}
                             >
                                 {page.menutext}
                             </Button>

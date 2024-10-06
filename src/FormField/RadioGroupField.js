@@ -1,5 +1,5 @@
 import React from 'react'
-import useField from 'formik'
+import {useField} from 'formik'
 import FormControl from '@mui/material/FormControl'
 import FormLabel from '@mui/material/FormLabel'
 import FormHelperText from '@mui/material/FormHelperText'
@@ -39,6 +39,7 @@ export default function RadioGroupField(props) {
                             control={<Radio />}
                             name={name}
                             label={item.label}
+                            value={item.value}
                         />
                     })
                 }

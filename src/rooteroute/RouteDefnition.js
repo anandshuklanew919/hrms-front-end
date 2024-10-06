@@ -11,6 +11,7 @@ import EmployeeDashboard from '../component/Employee/EmployeeDashboard/EmployeeD
 import EmployeeSummaryWrap from '../component/Employee/EmployeeSummary/EmployeeSummaryWrap'
 import PrivateRoute from "./PrivateRoute";
 import LoginPage from "../component/Auth/Login/Login";
+import EmployeePersonal from "../component/Employee/EmployeeForms/EmployeePersonal";
 
 
 
@@ -62,7 +63,7 @@ const routeDefnition = createBrowserRouter([
                     },
                     {
                         path: 'new',
-                        element: <EmployeeSummaryWrap />
+                        element: <EmployeePersonal />
                     },
                     {
                         path: 'edit/:id',

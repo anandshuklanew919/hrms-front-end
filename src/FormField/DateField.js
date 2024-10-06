@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import useField from 'formik'
+import {useField} from 'formik'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
@@ -49,7 +49,7 @@ export default function DateField(props) {
 
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <FormControl variant='filled' error={isError} fullWidth={fullWidth}>
+            <FormControl variant='filled' error={isError} >
                 <DatePicker
                     value={selectedDate}
                     label={label}
